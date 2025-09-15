@@ -9,7 +9,9 @@ body {
 }
 
 .container {
-    background-color: rgb(150, 71, 120);
+    --blue: rgb(39, 158, 255);
+    --white: #ffffff;
+    --grey: rgb(214, 209, 209);
     height: 100%;
     display: grid;
     grid-template-areas:
@@ -20,12 +22,17 @@ body {
     grid-template-rows: 3fr 10fr 1fr;
     font-family: sans-serif;
 
+    .profile-logo {
+        width: 3rem;
+        border-radius: 50%;
+    }
+
     a {
         text-decoration-line: none;
     }
 
     .content {
-        background-color: yellow;
+        background-color: var(--grey);
         grid-area: contents;
     }
 
@@ -35,15 +42,77 @@ body {
     }
 
     .header {
-        background-color: red;
+        background-color: var(--white);
         grid-area: header;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            gap: 6rem;
+
+            .search {
+                align-items: center;
+                flex: 1;
+                display: flex;
+                gap: 1rem;
+
+                input {
+                    flex: 1;
+                    height: 1.8rem;
+                    border-radius: 1rem;
+                    border: none;
+                    padding: 2px 1rem;
+                    font-weight: 600;
+                    background-color: var(--grey);
+                }
+
+                button {
+                    background-color: var(--white);
+                    border: none;
+                    border-radius: 50%;
+
+                    &:hover {
+                        box-shadow: 1px 1px 2px black
+                    }
+
+                    &:active {
+                        background-color: var(--grey);
+                    }
+                }
+            }
+
+            .profile {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .name {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+            }
+
+        }
+        .bottom{
+            
+        }
+        .top,
+        .bottom {
+            padding: 1rem 2rem
+        }
+
+
+        svg {
+            width: 1.5rem
+        }
     }
 
     .sidebar {
-        background-color: rgb(39, 158, 255);
+        background-color: var(--blue);
         grid-area: sidebar;
         padding: 1rem;
-
         color: white;
 
         svg {
