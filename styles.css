@@ -16,6 +16,7 @@ body {
     --blue: rgb(39, 158, 255);
     --white: #ffffff;
     --grey: rgb(214, 209, 209);
+    --orange: rgb(219, 153, 11);
 
     height: 100%;
     display: grid;
@@ -32,7 +33,7 @@ body {
     background-color: var(--blue);
     grid-area: sidebar;
     padding: 1rem;
-    color: white;
+    color: var(--white);
 }
 
 .sidebar .title {
@@ -224,7 +225,7 @@ button {
 .projects .project-card {
     background-color: var(--white);
     border-radius: 5px;
-    border-left: 10px solid rgb(219, 153, 11);
+    border-left: 10px solid var(--orange);
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
@@ -235,7 +236,21 @@ button {
     margin-top: auto
 }
 
-.container .footer {
-    background-color: rgb(105, 175, 107);
+.footer {
+    background-color: var(--orange);
+    height: 100%;
     grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    text-shadow: 2px 1px 1px black
+}
+
+.footer img {
+    border-radius: 50%;
+    width: 2rem
 }
