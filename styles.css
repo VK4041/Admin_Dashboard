@@ -8,6 +8,10 @@ body {
     height: 100vh
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .container {
     --blue: rgb(39, 158, 255);
     --white: #ffffff;
@@ -105,9 +109,9 @@ a {
     background-color: var(--grey);
 }
 
-.top button {
+.top button,
+.card-btns button {
     background-color: var(--white);
-    border: none;
     border-radius: 50%;
 }
 
@@ -141,7 +145,6 @@ a {
     color: white;
     font-weight: 600;
     font-size: 1rem;
-    border: none;
     border-radius: 1.5rem;
     height: 2rem;
     padding: 1.5rem 2rem;
@@ -178,12 +181,14 @@ svg {
 }
 
 button {
+    border: 1px solid transparent;
+
     &:active {
         background-color: var(--grey) !important;
     }
 
     &:hover {
-        box-shadow: 1px 1px 2px black;
+        border: 1px solid black
     }
 }
 
@@ -191,14 +196,43 @@ button {
     background-color: var(--grey);
     grid-area: contents;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
     padding: 1.5rem 1rem
 }
 
-.content>div p:first-child {
+.content>div>p:first-child,
+.projects .card-title {
     font-size: 1.2rem;
     font-weight: 600;
+    margin: 0 0 1rem
+}
+
+.projects .card-text {
+    margin-bottom: 1rem;
+}
+
+.projects .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.projects p {
     margin: 0
+}
+
+.projects .project-card {
+    background-color: var(--white);
+    border-radius: 5px;
+    border-left: 10px solid rgb(219, 153, 11);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects .project-card .card-btns {
+    align-self: end;
+    margin-top: auto
 }
 
 .container .footer {
