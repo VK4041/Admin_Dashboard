@@ -198,10 +198,11 @@ button {
     grid-area: contents;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 1.5rem 1rem
+    padding: 2rem;
+    gap: 1.5rem
 }
 
-.content>div>p:first-child,
+.projects>p,
 .projects .card-title {
     font-size: 1.2rem;
     font-weight: 600;
@@ -218,10 +219,6 @@ button {
     gap: 1rem;
 }
 
-.projects p {
-    margin: 0
-}
-
 .projects .project-card {
     background-color: var(--white);
     border-radius: 5px;
@@ -234,6 +231,70 @@ button {
 .projects .project-card .card-btns {
     align-self: end;
     margin-top: auto
+}
+
+.info-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "announce"
+        "trend";
+}
+
+.info-grid>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.announcements {
+    grid-area: announce
+}
+
+.trending {
+    grid-area: trend;
+}
+
+.info-grid>div>p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.info-grid p {
+    margin: 0
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 5px;
+    flex: 1;
+}
+
+.info-card>div {
+    flex: 1
+}
+
+.info-card .row-header {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.info-card .row-text {
+    font-size: 0.8rem;
+}
+
+.announcement-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+
+
+.announcement-row:not(:last-child) {
+    border-bottom: 1px solid var(--grey)
 }
 
 .footer {
